@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Ananya Singh</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body.dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #6a00f4;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .section-box {
+      background: linear-gradient(to right, #1e3c72, black);
+      color: white;
+      padding: 50px 20px;
+      text-align: left;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-bottom: 30px;
+      border-radius: 12px;
+    }
+
+    .section-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight {
+      color: #6a00f4;
+      font-weight: bold;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: zoomIn 0.4s ease;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 10px;
+      color: #6a00f4;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .popup-btn {
+      padding: 10px 20px;
+      background: #6a00f4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .popup-btn:hover {
+      background: #4500a0;
+    }
+  </style>
+</head>
+<body>
+
+<button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle dark mode</button>
+
+<header>
+  <h1 data-aos="fade-down">About Me</h1>
+  <p data-aos="fade-up" data-aos-delay="200">Frontend Developer • Creative Mind • Entrepreneur</p>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="section-box" data-aos="fade-right">
+    <h2>Who Am I?</h2>
+    <p>Hi, I'm <span class="highlight">Ananya Singh</span> – a passionate Frontend Developer, creative thinker, and a Computer Science Engineering student at <span class="highlight">Quantum University</span>.</p>
+    <p>I love crafting user-centric digital experiences with HTML, CSS, JavaScript, and C++.</p>
+    <p>I co-founded <span class="highlight">Dream Organisers</span>, an event startup, which refined my leadership and strategic skills.</p>
+    <p>Outside of tech, I enjoy <span class="highlight">fashion designing</span>, video editing, and content creation.</p>
+  </section>
+
+  <section class="section-box" data-aos="fade-left" data-aos-delay="100">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>2024 – Present:</strong> B.Tech, CSE @ Quantum University</li>
+      <li><strong>2021 – 2023:</strong> 12th – MPS Lucknow (85.5%)</li>
+      <li><strong>2021 – 2022:</strong> 10th – SJS Raebareli (93.8%)</li>
+    </ul>
+  </section>
+  <section class="section-box" data-aos="fade-up" data-aos-delay="300">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5, CSS3, JavaScript</li>
+      <li>C, C++, Python</li>
+      <li>UI/UX Design Principles</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+
+  <section class="section-box" data-aos="fade-up" data-aos-delay="200">
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li>🌟 Fashion Designing</li>
+      <li>🎮 Video Editing</li>
+      <li>🎨 Graphic Designing</li>
+      <li>🎤 Event Management</li>
+      <li>📚 Tech Reading & Self-growth</li>
+    </ul>
+  </section>
+
+  
+  <section class="section-box" data-aos="zoom-in-up" data-aos-delay="400">
+    <h2>Want to know what I do?</h2>
+    <button class="popup-btn" onclick="openPopup()">Click Here</button>
+  </section>
+</main>
+
+<!-- Modal Popup -->
+<div class="modal" id="popupModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h3>What I Do</h3>
+    <ul style="text-align: left;">
+      <li>✔ Build responsive websites</li>
+      <li>✔ Design user interfaces & animations</li>
+      <li>✔ Develop startup event strategies</li>
+      <li>✔ Coordinate fashion & digital events</li>
+      <li>✔ Create digital posters and videos</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Ananya Singh. All Rights Reserved.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  function openPopup() {
+    document.getElementById('popupModal').style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('popupModal').style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('popupModal');
+    if (event.target == modal) {
+      closePopup();
+    }
+  }
+</script>
+</body>
+</html>
+
